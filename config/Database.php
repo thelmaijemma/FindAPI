@@ -2,9 +2,9 @@
 class Database {
     // DB Params
     private $host = 'localhost';
-    private $db_name = 'database';
-    private $username = 'username';
-    private $password = 'password';
+    private $db_name = 'wellfind';
+    private $username = 'root';
+    private $password = '0103';
     private $port = '3307';
     private $conn;
 
