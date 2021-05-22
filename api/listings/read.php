@@ -35,7 +35,8 @@ if($num > 0){
             'postal_code' => $postal_code,
             'google_id' => $google_id,
             'website' => $website,
-            'area-array' => $area_array
+            'area-array' => $area_array,
+            'tag-array' => $tag_array
         );
 
         // Push to 'data'
