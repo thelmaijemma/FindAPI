@@ -5,6 +5,7 @@ class Listing {
     private $conn;
     private $table = 'listings';
 
+
     // Listing Properties
     public $business_id;
     public $listing_name;
