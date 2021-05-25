@@ -10,7 +10,7 @@ class Submission {
     public $name;
     public $address;
     public $tags;
-    public $update;
+
   
 
 
@@ -27,8 +27,7 @@ class Submission {
                 ' SET
                 name = :name,
                 address = :address,
-                tags = :tags,
-                update = :update';
+                tags = :tags';
 
                 // Prepare Statement
                 echo 'this is query' . $query;
@@ -38,13 +37,13 @@ class Submission {
                 $this->name = htmlspecialchars(strip_tags($this->name));
                 $this->address = htmlspecialchars(strip_tags($this->address));
                 $this->tags = htmlspecialchars(strip_tags($this->tags));
-                $this->update = htmlspecialchars(strip_tags($this->update));
+        
                
                 // Bind Data
                 $stmt->bindParam(':name', $this->name);
                 $stmt->bindParam(':address', $this->address);
                 $stmt->bindParam(':tags', $this->tags);
-                $stmt->bindParam(':update', $this->update);
+   
 
                 // Execute Query
                 if($stmt->execute()) {
