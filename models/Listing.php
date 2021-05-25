@@ -126,7 +126,7 @@ public function search_match(){
              $this->listing_name = $row['listing_name'];
              $this->address = $row['address'];
              $this->postal_code = $row['postal_code'];
-             $this->google_id = $row['position'];
+             $this->position = $row['position'];
              $this->website = $row['website'];
              $this->area_array = $row['area_array'];
              $this->tag_array = $row['tag_array'];
