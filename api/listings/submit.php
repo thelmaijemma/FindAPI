@@ -22,6 +22,7 @@ $data = json_decode(file_get_contents("php://input"));
 $submission->name = $data->name;
 $submission->address = $data->address;
 $submission->tags = $data->tags;
+$submission->update = $data->update;
 
 // Create Listing
 if($submission->create()){
