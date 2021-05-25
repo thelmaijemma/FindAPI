@@ -61,7 +61,7 @@ class Listing {
 public function search_match(){
             $query = "SELECT * FROM " 
             . $this->table 
-            . " WHERE tag_array LIKE ?";
+            . " WHERE CONCAT_WS('', tag_array, area_array, address) LIKE ?";
 
             // LIMIT 10
 
