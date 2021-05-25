@@ -61,7 +61,7 @@ class Listing {
 public function search_match(){
             $query = "SELECT * FROM " 
             . $this->table 
-            . " WHERE tag_array LIKE ? OR area_array LIKE ?";
+            . " WHERE tag_array LIKE ?";
 
             // LIMIT 10
 
