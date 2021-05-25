@@ -1,5 +1,6 @@
 <?php 
-// for create and put - headers - application json
+// POST
+// https://wellfindapi.herokuapp.com/api/listings/submit.php
 class Submission {
     // DB
     private $conn;
