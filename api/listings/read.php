@@ -33,7 +33,8 @@ if($num > 0){
             'listing_name' => html_entity_decode($listing_name),
             'address' => $address,
             'postal_code' => $postal_code,
-            'position' => $position,
+            'lat' => $lat,
+            'lng' => $lng,
             'website' => $website,
             'area-array' => $area_array,
             'tag-array' => $tag_array

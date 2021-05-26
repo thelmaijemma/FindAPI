@@ -11,7 +11,8 @@ class Listing {
     public $listing_name;
     public $address;
     public $postal_code;
-    public $position;
+    public $lat;
+    public $lng;
     public $website;
     public $tag_array;
     public $area_array;
@@ -34,7 +35,8 @@ class Listing {
             l.listing_name,
             l.address,
             l.postal_code,
-            l.position,
+            l.lat,
+            l.lng,
             l.website,
             l.tag_array,
             l.area_array
@@ -96,7 +98,8 @@ public function search_match(){
             l.listing_name,
             l.address,
             l.postal_code,
-            l.position,
+            l.lat,
+            l.lng,
             l.website,
             l.tag_array,
             l.area_array
@@ -126,7 +129,8 @@ public function search_match(){
              $this->listing_name = $row['listing_name'];
              $this->address = $row['address'];
              $this->postal_code = $row['postal_code'];
-             $this->position = $row['position'];
+             $this->lat = $row['lng'];
+             $this->lat = $row['lng'];
              $this->website = $row['website'];
              $this->area_array = $row['area_array'];
              $this->tag_array = $row['tag_array'];
@@ -144,7 +148,8 @@ public function search_match(){
                 listing_name = :listing_name,
                 address = :address,
                 postal_code = :postal_code,
-                position = :position,
+                lat = :lat,
+                lng = :lng,
                 website = :website,
                 tag_array = :tag_array,
                 area_array = :area_array';
@@ -157,7 +162,8 @@ public function search_match(){
                 $this->listing_name = htmlspecialchars(strip_tags($this->listing_name));
                 $this->address = htmlspecialchars(strip_tags($this->address));
                 $this->postal_code = htmlspecialchars(strip_tags($this->postal_code));
-                $this->position = htmlspecialchars(strip_tags($this->position));
+                $this->lat = htmlspecialchars(strip_tags($this->lat));
+                $this->lng = htmlspecialchars(strip_tags($this->lng));
                 $this->website = htmlspecialchars(strip_tags($this->website));
                 $this->tag_array = htmlspecialchars(strip_tags($this->tag_array));
                 $this->area_array = htmlspecialchars(strip_tags($this->area_array));
@@ -166,7 +172,8 @@ public function search_match(){
                 $stmt->bindParam(':listing_name', $this->listing_name);
                 $stmt->bindParam(':address', $this->address);
                 $stmt->bindParam(':postal_code', $this->postal_code);
-                $stmt->bindParam(':position', $this->position);
+                $stmt->bindParam(':lat', $this->lat);
+                $stmt->bindParam(':lng', $this->lng);
                 $stmt->bindParam(':website', $this->website);
                 $stmt->bindParam(':tag_array', $this->tag_array);
                 $stmt->bindParam(':area_array', $this->area_array);
