@@ -26,7 +26,7 @@ $listing->business_id = $data->id;
 
 
 // update: name
-$listing->tag_array = $data->tag_array;
+$listing->tags = $data->tags;
 
 /* other
 $listing->address = $data->address;

@@ -25,8 +25,8 @@ $listing->postal_code = $data->postal_code;
 $listing->lat = $data->lat;
 $listing->lng = $data->lng;
 $listing->website = $data->website;
-$listing->tag_array = $data->tag_array;
-$listing->area_array = $data->area_array;
+$listing->tags = $data->tags;
+$listing->areas = $data->areas;
 
 // Create Listing
 if($listing->create()){

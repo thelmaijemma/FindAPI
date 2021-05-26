@@ -40,8 +40,8 @@ $listing_arr = array(
     'lat' => $listing->lat,
     'lng' => $listing->lng,
     'website' => $listing->website,
-    'area-array' => $listing->area_array,
-    'tag-array' => $listing->tag_array
+    'areas' => $listing->areas,
+    'tags' => $listing->tags
 );
 
 // Make Json

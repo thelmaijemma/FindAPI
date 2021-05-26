@@ -14,8 +14,8 @@ class Listing {
     public $lat;
     public $lng;
     public $website;
-    public $tag_array;
-    public $area_array;
+    public $tags;
+    public $areas;
     public $info;
     public $search;
 
@@ -38,8 +38,8 @@ class Listing {
             l.lat,
             l.lng,
             l.website,
-            l.tag_array,
-            l.area_array
+            l.tags,
+            l.areas
             FROM
             ' . $this->table . ' l
             LEFT JOIN 
@@ -101,8 +101,8 @@ public function search_match(){
             l.lat,
             l.lng,
             l.website,
-            l.tag_array,
-            l.area_array
+            l.tags,
+            l.areas
             FROM
             ' . $this->table . ' l
             LEFT JOIN 
@@ -132,8 +132,8 @@ public function search_match(){
              $this->lat = $row['lng'];
              $this->lat = $row['lng'];
              $this->website = $row['website'];
-             $this->area_array = $row['area_array'];
-             $this->tag_array = $row['tag_array'];
+             $this->areas = $row['areas'];
+             $this->tags = $row['tags'];
 
         }
 
@@ -151,8 +151,8 @@ public function search_match(){
                 lat = :lat,
                 lng = :lng,
                 website = :website,
-                tag_array = :tag_array,
-                area_array = :area_array';
+                tags = :tags,
+                areas = :areas';
 
                 // Prepare Statement
                 echo 'this is query' . $query;
@@ -165,8 +165,8 @@ public function search_match(){
                 $this->lat = htmlspecialchars(strip_tags($this->lat));
                 $this->lng = htmlspecialchars(strip_tags($this->lng));
                 $this->website = htmlspecialchars(strip_tags($this->website));
-                $this->tag_array = htmlspecialchars(strip_tags($this->tag_array));
-                $this->area_array = htmlspecialchars(strip_tags($this->area_array));
+                $this->tags = htmlspecialchars(strip_tags($this->tags));
+                $this->areas = htmlspecialchars(strip_tags($this->areas));
                
                 // Bind Data
                 $stmt->bindParam(':listing_name', $this->listing_name);
@@ -175,8 +175,8 @@ public function search_match(){
                 $stmt->bindParam(':lat', $this->lat);
                 $stmt->bindParam(':lng', $this->lng);
                 $stmt->bindParam(':website', $this->website);
-                $stmt->bindParam(':tag_array', $this->tag_array);
-                $stmt->bindParam(':area_array', $this->area_array);
+                $stmt->bindParam(':tags', $this->tags);
+                $stmt->bindParam(':areas', $this->areas);
 
                 // Execute Query
                 if($stmt->execute()) {
@@ -210,7 +210,7 @@ public function search_match(){
                 $query = 'UPDATE ' . 
                 $this->table . 
                 ' SET 
-                tag_array = :tag_array 
+                tags = :tags 
                 WHERE
                     business_id = :id
                 ';
@@ -220,11 +220,11 @@ public function search_match(){
                 $stmt = $this->conn->prepare($query);
 
                 // Clean Data
-                $this->tag_array = htmlspecialchars(strip_tags($this->tag_array));
+                $this->tags = htmlspecialchars(strip_tags($this->tags));
                 $this->business_id = htmlspecialchars(strip_tags($this->business_id));
                
                 // Bind Data
-                $stmt->bindParam(':tag_array', $this->tag_array);
+                $stmt->bindParam(':tags', $this->tags);
                  $stmt->bindParam(':id', $this->business_id);
 
                 // Execute Query
@@ -244,11 +244,11 @@ public function search_match(){
                 $stmt = $this->conn->prepare($query);
 
                 // Clean Data
-                $this->tag_array = htmlspecialchars(strip_tags($this->tag_array));
+                $this->tags = htmlspecialchars(strip_tags($this->tags));
                 $this->business_id = htmlspecialchars(strip_tags($this->business_id));
                
                 // Bind Data
-                $stmt->bindParam(':tag_array', $this->tag_array);
+                $stmt->bindParam(':tags', $this->tags);
                  $stmt->bindParam(':id', $this->business_id);
 
 

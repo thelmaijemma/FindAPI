@@ -42,8 +42,8 @@ if($num > 0){
             'lat' => $lat,
             'lng' => $lng,
             'website' => $website,
-            'area-array' => $area_array,
-            'tag-array' => $tag_array
+            'areas' => $areas,
+            'tags' => $tags
         );
 
         // Push to 'data'
