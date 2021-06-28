@@ -70,9 +70,13 @@ public function search_match(){
              // Prepare Statement 
              $stmt = $this->conn->prepare($query);
 
+
+            // Prepare Search Variable
+            $term = "%" .$this->search ."%";
+
              // Bind Id
              
-            $stmt->bindParam(1, $this->search);
+            $stmt->bindParam(1, $term);
             // return $this->search; (%refill%)
             
              // Execute Query
